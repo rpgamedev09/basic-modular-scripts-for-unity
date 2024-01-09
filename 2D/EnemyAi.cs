@@ -18,9 +18,9 @@ public class EnemyAi : MonoBehaviour
     public float health;
 
     private void Start()
-    {
-        target = FindObjectOfType<PlayerController>().transform;
+    { 
     }
+    
     void Update()
     {
         if (Vector2.Distance(transform.position, target.position) < chasePointRange)
@@ -32,6 +32,8 @@ public class EnemyAi : MonoBehaviour
             Petrol();
         }
     }
+
+
     //petrolling
     private void Petrol()
     {
@@ -60,7 +62,7 @@ public class EnemyAi : MonoBehaviour
         walkPointSet = true;
     }
 
-
+    //chasing 
     void Chase() {
         transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
     }
